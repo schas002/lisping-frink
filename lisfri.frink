@@ -1,15 +1,23 @@
-READ = { |x|
-    x
+READ[x] :=
+{
+    return x
 }
 
-EVAL = { |x, memory|
-    x
+EVAL[x, memory] :=
+{
+    return x
 }
 
-PRINT = { |x|
-    x
+PRINT[x] :=
+{
+    return x
 }
 
 rep = { |x|
     PRINT[EVAL[READ[x], ""]]
+}
+
+while line = input["user> "]
+{
+    println[rep[line]]
 }
