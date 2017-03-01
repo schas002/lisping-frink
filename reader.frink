@@ -1,0 +1,23 @@
+class Reader
+{
+    tokens is array = []
+    position is unit = 0
+    new[t] :=
+    {
+        tokens = t
+    }
+    new[t, p] :=
+    {
+        tokens = t
+        position = p
+    }
+    pop[] :=
+    {
+        position = position + 1
+        return tokens@(position - 1)
+    }
+    peek[] :=
+    {
+        return tokens@position
+    }
+}
