@@ -21,3 +21,9 @@ class Reader
         return tokens@position
     }
 }
+
+read_str = { |x|
+    tokens = tokenize[x]
+    reader = new Reader[tokens]
+    read_form[reader]
+}
