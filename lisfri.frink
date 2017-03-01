@@ -1,0 +1,15 @@
+READ = { |x|
+    x
+}
+
+EVAL = { |x, memory|
+    x
+}
+
+PRINT = { |x|
+    x
+}
+
+rep = { |x|
+    PRINT[EVAL[READ[x], ""]]
+}
