@@ -1,3 +1,5 @@
+THE_ONE_TRUE_REGEX = %r/[\s,]*(~@|[\[\]{}()'`~^@]|"(?:\\.|[^\\"])*"|;.*|[^\s\[\]{}('"`,;)]*)/g
+
 class Reader
 {
     tokens is array = []
@@ -26,4 +28,12 @@ read_str = { |x|
     tokens = tokenize[x]
     reader = new Reader[tokens]
     read_form[reader]
+}
+
+tokenize = { |x|
+    results = x =~ THE_ONE_TRUE_REGEX
+    map["trim", results]
+    remove[results, { |x|
+        left[x, 1] == ";"
+    }]
 }
